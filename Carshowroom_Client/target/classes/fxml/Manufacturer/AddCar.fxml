@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Manufacturer.AddCarController">
+   <children>
+      <Text layoutX="436.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Car">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <TextField fx:id="regTxt" layoutX="237.0" layoutY="350.0" prefHeight="31.0" prefWidth="200.0" promptText="Registration No" />
+      <TextField fx:id="carMakeTxt" layoutX="237.0" layoutY="393.0" prefHeight="31.0" prefWidth="200.0" promptText="Car Make" />
+      <TextField fx:id="PriceTxt" layoutX="558.0" layoutY="439.0" prefHeight="31.0" prefWidth="200.0" promptText="Price" />
+      <TextField fx:id="CarModelTxt" layoutX="237.0" layoutY="439.0" prefHeight="31.0" prefWidth="200.0" promptText="Car Model" />
+      <TextField fx:id="YearMadeTxt" layoutX="558.0" layoutY="350.0" prefHeight="31.0" prefWidth="200.0" promptText="Year Made" />
+      <TextField fx:id="ColorTxt" layoutX="558.0" layoutY="393.0" prefHeight="31.0" prefWidth="200.0" promptText="Color" />
+      <Button fx:id="addCarBtn" layoutX="453.0" layoutY="517.0" mnemonicParsing="false" onAction="#onPressedAddCar" prefHeight="39.0" prefWidth="96.0" text="Add" />
+      <Button fx:id="toBack" layoutX="464.0" layoutY="577.0" mnemonicParsing="false" onAction="#OnPressedToBack" text="&lt;&lt;Back" />
+      <Button fx:id="selectImgBtn" layoutX="353.0" layoutY="98.0" mnemonicParsing="false" onAction="#onPressedSelectImage" text="Select Image From Local Directory">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="carView" fitHeight="157.0" fitWidth="283.0" layoutX="359.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
