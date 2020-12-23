@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -18,15 +20,32 @@
     <children>
         <AnchorPane prefHeight="650.0" prefWidth="1000.0">
          <children>
-            <Text layoutX="395.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Viewer Menu">
+             <ImageView fitHeight="650.0" fitWidth="1000.0">
+                 <image>
+                     <Image url="@../../image/Background.jpg" />
+                 </image>
+             </ImageView>
+            <Text layoutX="103.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Viewer Menu">
                <font>
-                  <Font size="36.0" />
+                  <Font name="Marlett" size="36.0" />
                </font>
             </Text>
-            <Button fx:id="viewAndBuyCar" layoutX="378.0" layoutY="237.0" mnemonicParsing="false" onAction="#onPressedViewAndBuyCar" prefHeight="31.0" prefWidth="244.0" text="View  and Buy Cars" />
-            <Button fx:id="searchByReg" layoutX="378.0" layoutY="287.0" mnemonicParsing="false" onAction="#onPressedSearchByReg" text="Search car by registration number" />
-            <Button fx:id="searchByMake" layoutX="378.0" layoutY="332.0" mnemonicParsing="false" onAction="#onPressedSearchByMake" prefHeight="31.0" prefWidth="244.0" text="Search car by make and model" />
-            <Button fx:id="toMainMenu" layoutX="414.0" layoutY="512.0" mnemonicParsing="false" onAction="#onPressedToMainMenu" text="&lt;&lt; Back to main menu" />
+            <Button fx:id="viewAndBuyCar" layoutX="59.0" layoutY="255.0" mnemonicParsing="false" onAction="#onPressedViewAndBuyCar" prefHeight="39.0" prefWidth="293.0" text="View  and Buy Cars">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="searchByReg" layoutX="59.0" layoutY="308.0" mnemonicParsing="false" onAction="#onPressedSearchByReg" text="Search car by registration number">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="searchByMake" layoutX="59.0" layoutY="363.0" mnemonicParsing="false" onAction="#onPressedSearchByMake" prefHeight="39.0" prefWidth="293.0" text="Search car by make and model">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="toMainMenu" layoutX="102.0" layoutY="526.0" mnemonicParsing="false" onAction="#onPressedToMainMenu" text="&lt;&lt; Back to main menu">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
          </children>
         </AnchorPane>
     </children>

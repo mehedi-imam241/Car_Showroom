@@ -245,22 +245,13 @@ public class Server extends Thread {
                         objectOutputStream.flush();
                     }
                 }
-
-                //System.out.println(profile.getPassword()+profile.getPassword());
-
-
-                // Do necessary work here ---->>>>
-                //Add functionality
-                //objectOutputStream.writeObject();
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException {
         Thread Sthread = new Server();
         Sthread.start();
     }

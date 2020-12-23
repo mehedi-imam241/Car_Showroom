@@ -1,5 +1,6 @@
 package mainMenu;
 
+import Utils.WindowPositioning;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +14,8 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/mainMenu.fxml"));
         primaryStage.setTitle("Car Showroom");
         primaryStage.setScene(new Scene(root, 1000.0, 650.0));
+        primaryStage.setX(WindowPositioning.getX());
+        primaryStage.setY(WindowPositioning.getY());
         primaryStage.show();
     }
 

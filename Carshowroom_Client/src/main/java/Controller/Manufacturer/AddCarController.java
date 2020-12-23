@@ -2,22 +2,18 @@ package Controller.Manufacturer;
 
 
 import Client.SocketConnector;
+import Utils.*;
 import Utils.Car;
 import Utils.Profile;
-import Utils.ShowAlert;
 import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -168,17 +164,7 @@ public class AddCarController {
         }
 
         public void OnPressedToBack (ActionEvent actionEvent){
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Manufacturer/manufacturerMenu.fxml"));
-                Parent root1 = fxmlLoader.load();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root1));
-                stage.setTitle("Manufacturer Menu");
-                stage.show();
-                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            new ShowWindow(FxmlLoc.getManufacturerMenu(),"Manufacturer Menu",actionEvent);
         }
 
     private boolean isInt (String str){

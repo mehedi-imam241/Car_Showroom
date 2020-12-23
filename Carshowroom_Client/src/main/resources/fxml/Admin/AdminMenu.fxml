@@ -1,38 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Admin.AdminMenuController">
    <children>
-      <Button fx:id="addUser" layoutX="419.0" layoutY="290.0" mnemonicParsing="false" onAction="#onPressedAddUser" prefHeight="51.0" prefWidth="164.0" text="Add User">
+      <ImageView fitHeight="650.0" fitWidth="1000.0">
+         <image>
+            <Image url="@../../image/Background.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="addUser" layoutX="95.0" layoutY="259.0" mnemonicParsing="false" onAction="#onPressedAddUser" prefHeight="51.0" prefWidth="164.0" text="Add User">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="updateUser" layoutX="418.0" layoutY="361.0" mnemonicParsing="false" onAction="#onPressedUpdateUser" text="Update User">
+      <Button fx:id="updateUser" layoutX="95.0" layoutY="318.0" mnemonicParsing="false" onAction="#onPressedUpdateUser" text="Update User">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="deleteUser" layoutX="418.0" layoutY="433.0" mnemonicParsing="false" onAction="#onPressedDeleteUser" prefHeight="51.0" prefWidth="164.0" text="Delete User">
+      <Button fx:id="deleteUser" layoutX="95.0" layoutY="380.0" mnemonicParsing="false" onAction="#onPressedDeleteUser" prefHeight="51.0" prefWidth="164.0" text="Delete User">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Text layoutX="399.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Menu" wrappingWidth="249.279296875">
+      <Text layoutX="84.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Menu" wrappingWidth="249.279296875">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
-      <Button fx:id="toMainMenu" layoutX="456.0" layoutY="538.0" mnemonicParsing="false" onAction="#onPressToBack" text="&lt;&lt; Back">
+      <Button fx:id="toMainMenu" layoutX="132.0" layoutY="503.0" mnemonicParsing="false" onAction="#onPressToBack" text="&lt;&lt; Back">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="seeAll" layoutX="419.0" layoutY="223.0" mnemonicParsing="false" onAction="#onPressedSeeAll" prefHeight="48.0" prefWidth="164.0" text="See All">
+      <Button fx:id="seeAll" layoutX="95.0" layoutY="198.0" mnemonicParsing="false" onAction="#onPressedSeeAll" prefHeight="48.0" prefWidth="164.0" text="See All">
          <font>
             <Font size="24.0" />
          </font>

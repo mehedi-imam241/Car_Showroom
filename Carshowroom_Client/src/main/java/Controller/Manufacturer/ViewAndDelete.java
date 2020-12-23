@@ -2,8 +2,10 @@ package Controller.Manufacturer;
 
 
 import Client.SocketConnector;
+import Utils.FxmlLoc;
 import Utils.Profile;
 import Utils.ShowAlert;
+import Utils.ShowWindow;
 import Utils.table.Car;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -11,10 +13,6 @@ import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
@@ -22,7 +20,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import javax.imageio.ImageIO;
@@ -196,16 +193,6 @@ public class ViewAndDelete {
     }
 
     public void onPressedToBack(ActionEvent actionEvent) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Manufacturer/manufacturerMenu.fxml"));
-            Parent root1 = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root1));
-            stage.setTitle("Manufacturer Menu");
-            stage.show();
-            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        new ShowWindow(FxmlLoc.getManufacturerMenu(),"Manufacturer Menu",actionEvent);
     }
 }

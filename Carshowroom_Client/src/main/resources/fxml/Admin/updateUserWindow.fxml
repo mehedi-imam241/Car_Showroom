@@ -3,13 +3,20 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Admin.UpdateUserWindowController">
    <children>
-      <TextField fx:id="searchUserTxt" layoutX="367.0" layoutY="168.0" promptText="User Name">
+      <ImageView fitHeight="650.0" fitWidth="1000.0" opacity="0.2">
+         <image>
+            <Image url="@../../image/Background.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="searchUserTxt" layoutX="459.0" layoutY="169.0" promptText="User Name">
          <font>
             <Font size="24.0" />
          </font>
@@ -19,12 +26,12 @@
             <Font size="36.0" />
          </font>
       </Text>
-       <TextField fx:id="newNameTxt" layoutX="367.0" layoutY="249.0" promptText="Enter New User Name">
+       <TextField fx:id="newNameTxt" layoutX="459.0" layoutY="244.0" promptText="Enter New User Name">
            <font>
                <Font size="24.0" />
            </font>
        </TextField>
-      <PasswordField fx:id="newPasswordTxt" layoutX="367.0" layoutY="326.0" promptText="Enter New Password">
+      <PasswordField fx:id="newPasswordTxt" layoutX="459.0" layoutY="322.0" promptText="Enter New Password">
          <font>
             <Font size="24.0" />
          </font>
@@ -39,5 +46,20 @@
             <Font size="24.0" />
          </font>
       </Button>
+      <Text layoutX="288.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name : ">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <Text layoutX="224.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New User Name : ">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <Text layoutX="245.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Password : ">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

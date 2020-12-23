@@ -2,17 +2,14 @@ package Controller.Admin;
 
 
 import Client.SocketConnector;
+import Utils.FxmlLoc;
 import Utils.Profile;
 import Utils.ShowAlert;
+import Utils.ShowWindow;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -66,16 +63,6 @@ public class DeleteUserWindowController {
     }
 
     public void onPressedToBack(ActionEvent actionEvent) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Admin/AdminMenu.fxml"));
-            Parent root1 = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root1));
-            stage.setTitle("Admin Menu");
-            stage.show();
-            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        new ShowWindow(FxmlLoc.getAdminMenu(),"Admin Menu",actionEvent);
     }
 }

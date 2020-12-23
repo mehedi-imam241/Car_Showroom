@@ -3,24 +3,47 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="manufacturerLogin" prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Manufacturer.ManufacturerLoginController">
    <children>
-      <Button fx:id="ManufacturerLogin" layoutX="440.0" layoutY="430.0" mnemonicParsing="false" onAction="#onPressedManufacturerLogin" prefHeight="39.0" prefWidth="90.0" text="Login">
+      <ImageView fitHeight="650.0" fitWidth="1000.0">
+         <image>
+            <Image url="@../../image/Background.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="ManufacturerLogin" layoutX="123.0" layoutY="285.0" mnemonicParsing="false" onAction="#onPressedManufacturerLogin" prefHeight="51.0" prefWidth="110.0" text="Login">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Button>
-      <Text layoutX="383.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manufacturer Login" wrappingWidth="217.1484375">
+      <Text layoutX="49.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manufacturer Login" wrappingWidth="321.1484375">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <TextField fx:id="userName" layoutX="165.0" layoutY="178.0" onAction="#onGetUserName" prefHeight="39.0" prefWidth="217.0" promptText="User Name">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Button fx:id="toMainMenu" layoutX="92.0" layoutY="533.0" mnemonicParsing="false" onAction="#onPressedToMainMenu" prefHeight="39.0" prefWidth="172.0" text="&lt;&lt; Back to main menu" />
+      <PasswordField fx:id="password" layoutX="165.0" layoutY="226.0" onAction="#onGetPassword" prefHeight="39.0" prefWidth="217.0" promptText="Password">
+         <font>
+            <Font size="18.0" />
+         </font></PasswordField>
+      <Text layoutX="14.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name :">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="userName" layoutX="376.0" layoutY="243.0" onAction="#onGetUserName" prefHeight="39.0" prefWidth="217.0" promptText="User Name" />
-      <Button fx:id="toMainMenu" layoutX="399.0" layoutY="546.0" mnemonicParsing="false" onAction="#onPressedToMainMenu" prefHeight="39.0" prefWidth="172.0" text="&lt;&lt; Back to main menu" />
-      <PasswordField fx:id="password" layoutX="376.0" layoutY="351.0" onAction="#onGetPassword" prefHeight="39.0" prefWidth="217.0" promptText="Password" />
+      <Text layoutX="24.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password  :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

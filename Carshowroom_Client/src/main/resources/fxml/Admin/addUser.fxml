@@ -3,24 +3,30 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Admin.AddUserController">
    <children>
+      <ImageView fitHeight="650.0" fitWidth="1000.0" opacity="0.2">
+         <image>
+            <Image url="@../../image/Background.jpg" />
+         </image>
+      </ImageView>
       <Text layoutX="418.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add User">
          <font>
             <Font size="40.0" />
          </font>
       </Text>
-      <TextField fx:id="nameTxt" layoutX="351.0" layoutY="204.0" promptText="Name">
+      <TextField fx:id="nameTxt" layoutX="418.0" layoutY="200.0" promptText="Name">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="passwordTxt" layoutX="351.0" layoutY="284.0" promptText="Password">
+      <PasswordField fx:id="passwordTxt" layoutX="418.0" layoutY="274.0" promptText="Password">
          <font>
             <Font size="24.0" />
          </font>
@@ -35,5 +41,15 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <Text layoutX="244.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name : ">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <Text layoutX="265.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password : ">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

@@ -2,19 +2,16 @@ package Controller.Manufacturer;
 
 
 import Client.SocketConnector;
+import Utils.FxmlLoc;
 import Utils.Profile;
 import Utils.ShowAlert;
+import Utils.ShowWindow;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -64,17 +61,7 @@ public class ManufacturerLoginController {
 
 
             if (profile.getIsSuccess().equals("true")) {
-                try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Manufacturer/manufacturerMenu.fxml"));
-                    Parent root1 = fxmlLoader.load();
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root1));
-                    stage.setTitle("Manufacturer Menu");
-                    stage.show();
-                    ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                new ShowWindow(FxmlLoc.getManufacturerMenu(),"Manufacturer Menu",actionEvent);
             } else {
                 userName.clear();
                 password.clear();
@@ -92,17 +79,7 @@ public class ManufacturerLoginController {
     }
 
     public void onPressedToMainMenu(ActionEvent actionEvent) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/mainMenu.fxml"));
-            Parent root1 = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root1));
-            stage.setTitle("Main Menu");
-            stage.show();
-            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        new ShowWindow(FxmlLoc.getMainMenu(),"Main Menu",actionEvent);
     }
 
 }

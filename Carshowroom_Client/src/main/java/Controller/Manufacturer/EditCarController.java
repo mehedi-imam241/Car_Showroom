@@ -1,24 +1,19 @@
 package Controller.Manufacturer;
 
-
 import Client.SocketConnector;
+import Utils.*;
 import Utils.Car;
 import Utils.Profile;
-import Utils.ShowAlert;
 import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -95,13 +90,22 @@ public class EditCarController {
             newCarMakeTxt.setText(car.getMake());
             newCarModelTxt.setText(car.getModel());
             newPriceTxt.setText(String.valueOf(car.getPrice()));
-            newYearMadeTxt.setText(String.valueOf(car.getPrice()));
+            newYearMadeTxt.setText(String.valueOf(car.getYearmade()));
             newColorTxt.setText(car.getColor());
 
-            BufferedImage bImage= ImageIO.read(new ByteArrayInputStream(car.getImg()));
+            bImage= ImageIO.read(new ByteArrayInputStream(car.getImg()));
             Image image = SwingFXUtils.toFXImage(bImage, null);
             carView.setImage(image);
         } else {
+            bImage = null;
+            carView.setImage(null);
+            searchRegTxt.clear();
+            newRegTxt.clear();
+            newCarMakeTxt.clear();
+            newCarModelTxt.clear();
+            newPriceTxt.clear();
+            newYearMadeTxt.clear();
+            newColorTxt.clear();
             new ShowAlert("ERROR", "No car found");
         }
     }
@@ -169,8 +173,6 @@ public class EditCarController {
 
         SocketConnector client = new SocketConnector();
 
-
-
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(client.getSocket().getOutputStream());
         objectOutputStream.writeObject(new Profile("edit", "manufacturer"));
         objectOutputStream.flush();
@@ -188,9 +190,6 @@ public class EditCarController {
 
 
         if (res.equals("done")) {
-                BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(car.getImg()));
-                Image image = SwingFXUtils.toFXImage(bufferedImage, null);
-                carView.setImage(image);
                 bImage = null;
                 carView.setImage(null);
                 searchRegTxt.clear();
@@ -233,17 +232,7 @@ public class EditCarController {
         }
 
         public void OnPressedToBack (ActionEvent actionEvent){
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Manufacturer/manufacturerMenu.fxml"));
-                Parent root1 = fxmlLoader.load();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root1));
-                stage.setTitle("Manufacturer Menu");
-                stage.show();
-                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            new ShowWindow(FxmlLoc.getManufacturerMenu(),"Manufacturer Menu",actionEvent);
         }
 
         private boolean isInt (String str){

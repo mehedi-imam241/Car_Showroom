@@ -2,8 +2,10 @@ package Controller.Viewer;
 
 
 import Client.SocketConnector;
+import Utils.FxmlLoc;
 import Utils.Profile;
 import Utils.ShowAlert;
+import Utils.ShowWindow;
 import Utils.table.Car;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -11,15 +13,10 @@ import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import javax.imageio.ImageIO;
@@ -60,7 +57,7 @@ public class SearchByCarMakeAndModel {
     private String make, model;
     private List<Car> nList = new ArrayList<>();
 
-    public void onPressedSearchBtn(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+    public void onPressedSearchBtn(ActionEvent actionEvent)  {
         make = carMakeTxt.getText();
         model = carModelTxt.getText();
 
@@ -72,7 +69,7 @@ public class SearchByCarMakeAndModel {
                 () -> {
                     try {
                         search();
-                    } catch (IOException | ClassNotFoundException | InterruptedException e) {
+                    } catch (IOException | ClassNotFoundException e) {
                         e.printStackTrace();
                     }
                 }
@@ -80,7 +77,7 @@ public class SearchByCarMakeAndModel {
     }
 
 
-    private void search() throws IOException, ClassNotFoundException, InterruptedException {
+    private void search() throws IOException, ClassNotFoundException {
 
         SocketConnector admin = new SocketConnector();
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(admin.getSocket().getOutputStream());
@@ -158,17 +155,7 @@ public class SearchByCarMakeAndModel {
     }
 
     public void onPressedToBack(ActionEvent actionEvent) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Viewer/viewerMenu.fxml"));
-            Parent root1 = fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root1));
-            stage.setTitle("Viewer Menu");
-            stage.show();
-            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        new ShowWindow(FxmlLoc.getViewerMenu(),"Viewer Menu",actionEvent);
     }
 
 }

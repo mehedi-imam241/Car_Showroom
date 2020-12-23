@@ -1,7 +1,5 @@
 package Client;
 
-import Utils.ShowAlert;
-
 import java.net.Socket;
 import java.io.*;
 
@@ -17,18 +15,6 @@ public class SocketConnector {
             System.out.println("Server is disconnected");
             System.exit(0);
         }
-    }
-
-    public void close() throws IOException {
-        socket.close();
-    }
-
-    public boolean isReachable() throws IOException {
-        if(socket.getInetAddress().isReachable(500))
-        {
-            return true;
-        }
-        return false;
     }
 
     public Socket getSocket() {
